@@ -1,19 +1,38 @@
 import DocumentHead from '../components/document-head'
 import ExtLink from '../components/ext-link'
 import styles from '../styles/page.module.css'
+import Typed from 'react-typed'
+
+const ucapan = [
+  'Hallo!',
+  'Selamat datang! 👋'
+]
 
 const RenderPage = () => (
   <div className={styles.container}>
     <DocumentHead />
 
     <div>
-      <h2>Welcome!</h2>
-      <p>Your easy-notion-blog deployed successfully!</p>
-      <p>Have fun!</p>
+      <h2 align='center'>
+      {' '}
+          <Typed
+                loop
+                typeSpeed={160}
+                backSpeed={20}
+                strings={ucapan}
+                smartBackspace
+                backDelay={1000}
+                loopCount={1}
+                showCursor
+                cursorChar="|"
+          />
+              </h2>
+      <p>hai maniezz!</p>
+      <p></p>
       <p>
-        easy-notion-blog powered by{' '}
-        <ExtLink href="https://github.com/otoyo/easy-notion-blog">
-          otoyo/easy-notion-blog
+        Contact{' '}
+        <ExtLink href="https://wa.me/6282280781433">
+          WhatsApp
         </ExtLink>
       </p>
     </div>
