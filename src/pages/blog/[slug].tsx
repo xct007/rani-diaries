@@ -1,4 +1,4 @@
-/* eslint-disable no-alert, no-console */
+/* eslint-disable */
 
 import React from 'react'
 import useSWR from "swr"
