@@ -121,6 +121,49 @@ const RenderPost = ({
     if (error || !blocks) {
       return <PostsNotFound />
     }
+    return (
+      <div className={styles.container}>
+        <DocumentHead
+          title={post.Title}
+          description={post.Excerpt}
+          urlOgImage={post.OGImage}
+        />
+
+        <div className={styles.mainContent}>
+          <div className={styles.post}>
+            <PostDate post={post} />
+            <PostTags post={post} />
+            <PostTitle post={post} enableLink={false} />
+
+            <NoContents contents={blocks} />
+            <PostBody blocks={blocks} />
+
+            <footer>
+              {NEXT_PUBLIC_URL && (
+                <SocialButtons
+                  title={post.Title}
+                  url={new URL(
+                    getBlogLink(post.Slug),
+                    NEXT_PUBLIC_URL
+                  ).toString()}
+                  id={post.Slug}
+                />
+              )}
+            </footer>
+          </div>
+        </div>
+
+        <div className={styles.subContent}>
+          <BlogPostLink
+            heading="Posts in the same category"
+            posts={sameTagPosts}
+          />
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogPostLink heading="Latest posts" posts={recentPosts} />
+          <BlogTagLink heading="Categories" tags={tags} />
+        </div>
+      </div>
+    )
   } catch (er0) {
     return (
       <div>
@@ -131,49 +174,6 @@ const RenderPost = ({
       </div>
     )
   }
-  return (
-    <div className={styles.container}>
-      <DocumentHead
-        title={post.Title}
-        description={post.Excerpt}
-        urlOgImage={post.OGImage}
-      />
-
-      <div className={styles.mainContent}>
-        <div className={styles.post}>
-          <PostDate post={post} />
-          <PostTags post={post} />
-          <PostTitle post={post} enableLink={false} />
-
-          <NoContents contents={blocks} />
-          <PostBody blocks={blocks} />
-
-          <footer>
-            {NEXT_PUBLIC_URL && (
-              <SocialButtons
-                title={post.Title}
-                url={new URL(
-                  getBlogLink(post.Slug),
-                  NEXT_PUBLIC_URL
-                ).toString()}
-                id={post.Slug}
-              />
-            )}
-          </footer>
-        </div>
-      </div>
-
-      <div className={styles.subContent}>
-        <BlogPostLink
-          heading="Posts in the same category"
-          posts={sameTagPosts}
-        />
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
-      </div>
-    </div>
-  )
 }
 
 export default RenderPost
