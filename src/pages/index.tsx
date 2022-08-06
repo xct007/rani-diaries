@@ -13,7 +13,7 @@ const RenderPage = () => (
     <DocumentHead />
 
     <div>
-      <h2 align='center'>
+      <h2>
       {' '}
           <Typed
                 loop
@@ -26,8 +26,9 @@ const RenderPage = () => (
                 showCursor
                 cursorChar="|"
           />
-              </h2>
-      <p>hai maniezz!</p>
+      </h2>
+      <br/>
+      <p>Silakan hubungi saya jika ada pertanyaan !</p>
       <p></p>
       <p>
         Contact{' '}
