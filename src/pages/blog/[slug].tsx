@@ -129,7 +129,6 @@ const RenderPost = ({
       </div>
     )
   }
-
   return (
     <div className={styles.container}>
       <DocumentHead
