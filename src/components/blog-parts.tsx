@@ -150,7 +150,23 @@ export const TagLinkList = ({ tags }) => {
 }
 
 export const PostsNotFound = () => (
-  <div className={styles.postsNotFound}>
-    Woops! did not find the posts, redirecting you back to the blog index
-  </div>
-)
+    <div
+      style={{
+        marginTop: 100,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <h1>404</h1>
+      <h2>
+        <Link href="/blog">
+          <a style={{ color: 'blue', textDecoration: 'underline' }}>
+            Back
+          </a>
+        </Link>
+      </h2>
+      <p>Post not found</p>
+    </div>
+  );

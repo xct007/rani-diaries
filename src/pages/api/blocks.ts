@@ -15,9 +15,10 @@ const ApiBlocks = async function(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const { slug } = req.query
+  console.log(slug)
 
   if (!slug) {
-    res.statusCode = 400
+    res.statusCode = 404
     res.end()
     return
   }
@@ -35,6 +36,7 @@ const ApiBlocks = async function(req: NextApiRequest, res: NextApiResponse) {
     res.end()
   } catch (e) {
     console.log(e)
+    console.log('mmk')
     res.statusCode = 500
     res.end()
   }

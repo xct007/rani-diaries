@@ -51,6 +51,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
           href={new URL(asPath, NEXT_PUBLIC_URL).toString()}
         />
       ) : null}
+      <link rel="icon" type="image/x-icon" href="/rose.png"/>
     </Head>
   )
 }

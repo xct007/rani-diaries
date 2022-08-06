@@ -11,7 +11,6 @@ const ucapan = [
 const RenderPage = () => (
   <div className={styles.container}>
     <DocumentHead />
-
     <div>
       <h2>
       {' '}
