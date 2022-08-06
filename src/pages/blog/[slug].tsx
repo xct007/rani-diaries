@@ -115,16 +115,12 @@ const RenderPost = ({
   tags = [],
   fallback,
 }) => {
-  try {
-    const { data: blocks, error } = useSWR(
-      includeExpiredImage(fallback[slug]) && slug,
-      fetchBlocks,
-      { fallbackData: fallback[slug] }
-    )
-    if (error || !blocks) {
-      return <PostsNotFound />
-    }
-  } catch (er0) {
+  const { data: blocks, error } = useSWR(
+    includeExpiredImage(fallback[slug]) && slug,
+    fetchBlocks,
+    { fallbackData: fallback[slug] }
+  )
+  if (error || !blocks) {
     return (
       <div>
         <DocumentHead title="Post Not Found" />
@@ -132,7 +128,6 @@ const RenderPost = ({
       </div>
     )
   }
-  /* eslint-disable */
   return (
     <div className={styles.container}>
       <DocumentHead
