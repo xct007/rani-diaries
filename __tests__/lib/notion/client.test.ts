@@ -14,22 +14,22 @@ describe('getPosts', () => {
 
   it('resolves 3 posts having PageId', async () => {
     const got = await getPosts()
-    got.forEach(item => expect(item).toHaveProperty('PageId'))
+    got.forEach((item) => expect(item).toHaveProperty('PageId'))
   })
 
   it('resolves 3 posts having Slug', async () => {
     const got = await getPosts()
-    got.forEach(item => expect(item).toHaveProperty('Slug'))
+    got.forEach((item) => expect(item).toHaveProperty('Slug'))
   })
 
   it('resolves 3 posts having Title', async () => {
     const got = await getPosts()
-    got.forEach(item => expect(item).toHaveProperty('Title'))
+    got.forEach((item) => expect(item).toHaveProperty('Title'))
   })
 
   it('resolves 3 posts having Date', async () => {
     const got = await getPosts()
-    got.forEach(item => expect(item).toHaveProperty('Date'))
+    got.forEach((item) => expect(item).toHaveProperty('Date'))
   })
 })
 
@@ -44,13 +44,13 @@ describe('getAllBlocksByBlockId', () => {
 
   it('resolves Rows in Table blocks', async () => {
     const got = await getAllBlocksByBlockId(pageBlockId)
-    const tableBlock = got.filter(item => item.Type === 'table')[0]
+    const tableBlock = got.filter((item) => item.Type === 'table')[0]
     expect(tableBlock.Table).toHaveProperty('Rows')
   })
 
   it('resolves 4 Rows in Table blocks', async () => {
     const got = await getAllBlocksByBlockId(pageBlockId)
-    const tableBlock = got.filter(item => item.Type === 'table')[0]
+    const tableBlock = got.filter((item) => item.Type === 'table')[0]
     expect(tableBlock.Table.Rows).toHaveLength(4)
   })
 })

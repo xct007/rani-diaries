@@ -3,7 +3,7 @@ const sizeOf = require('image-size')
 
 export const fetchImageAsBlob = async (url: string) => {
   try {
-    return await fetch(url).then(res => res.blob())
+    return await fetch(url).then((res) => res.blob())
   } catch (err) {
     return null
   }

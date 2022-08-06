@@ -1,11 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import {
-  getPostBySlug,
-  getAllBlocksByBlockId,
-} from '../../lib/notion/client'
+import { getPostBySlug, getAllBlocksByBlockId } from '../../lib/notion/client'
 
-const ApiBlocks = async function(req: NextApiRequest, res: NextApiResponse) {
+const ApiBlocks = async function (req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Content-Type', 'application/json')
 
   if (req.method !== 'GET') {

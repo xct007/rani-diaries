@@ -32,7 +32,7 @@ describe('RenderPost', () => {
     const recentPosts = await getPosts(5)
     const tags = await getAllTags()
     const sameTagPosts = (await getPostsByTag(post.Tags[0], 6)).filter(
-      p => p.Slug !== post.Slug
+      (p) => p.Slug !== post.Slug
     )
     const fallback = {}
     fallback[slug] = blocks

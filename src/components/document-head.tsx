@@ -4,8 +4,7 @@ import { useRouter } from 'next/router'
 import { NEXT_PUBLIC_URL } from '../lib/notion/server-constants'
 
 export const SITE_TITLE = 'Rain'
-export const SITE_DESCRIPTION =
-  'Im Writing here :D.'
+export const SITE_DESCRIPTION = 'Im Writing here :D.'
 
 const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
   const { asPath } = useRouter()
@@ -51,7 +50,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
           href={new URL(asPath, NEXT_PUBLIC_URL).toString()}
         />
       ) : null}
-      <link rel="icon" type="image/x-icon" href="/rose.png"/>
+      <link rel="icon" type="image/x-icon" href="/rose.png" />
     </Head>
   )
 }

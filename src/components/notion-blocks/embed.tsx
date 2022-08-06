@@ -4,7 +4,7 @@ import styles from '../../styles/notion-block.module.css'
 
 const TweetEmbed = dynamic(() => import('./tweet-embed'))
 const LinkPreview = dynamic(() =>
-  import('@dhaiwat10/react-link-preview').then(m => m.LinkPreview)
+  import('@dhaiwat10/react-link-preview').then((m) => m.LinkPreview)
 )
 
 const Embed = ({ block }) => {

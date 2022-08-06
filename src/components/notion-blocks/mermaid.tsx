@@ -8,7 +8,7 @@ type Props = {
   definition: string
 }
 
-const Mermaid: FC<Props> = props => {
+const Mermaid: FC<Props> = (props) => {
   const { id, definition } = props
   const ref = useRef<HTMLDivElement>()
 

@@ -12,7 +12,7 @@ export const store = async (id: string, url: string) => {
   const binary = (await blob.arrayBuffer()) as Uint8Array
   const buffer = Buffer.from(binary)
 
-  fs.writeFile(filePath(id), buffer, err => {
+  fs.writeFile(filePath(id), buffer, (err) => {
     if (err) {
       console.log(err)
     }

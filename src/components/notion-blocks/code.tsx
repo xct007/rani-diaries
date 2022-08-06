@@ -22,9 +22,12 @@ import styles from '../../styles/notion-block.module.css'
 const Mermaid = dynamic(() => import('./mermaid'))
 
 const Code = ({ block }) => {
-  const code = block.Code.Text.map((richText: RichText) => richText.Text.Content).join('')
+  const code = block.Code.Text.map(
+    (richText: RichText) => richText.Text.Content
+  ).join('')
   const language = block.Code.Language.toLowerCase()
-  const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javascript
+  const grammer =
+    Prism.languages[language.toLowerCase()] || Prism.languages.javascript
 
   return (
     <div className={styles.code}>

@@ -8,7 +8,10 @@ const slug = 'supported-blocks'
 describe('/api/blocks', () => {
   describe('not GET', () => {
     test('returns 400', async () => {
-      const { req, res } = createMocks({ method: 'POST', url: `/api/blocks?slug=${slug}` });
+      const { req, res } = createMocks({
+        method: 'POST',
+        url: `/api/blocks?slug=${slug}`,
+      })
 
       await ApiBlocks(req, res)
       expect(res.statusCode).toEqual(400)
@@ -18,7 +21,10 @@ describe('/api/blocks', () => {
   describe('GET', () => {
     describe('empty slug', () => {
       test('returns 400', async () => {
-        const { req, res } = createMocks({ method: 'GET', url: '/api/blocks?slug=' });
+        const { req, res } = createMocks({
+          method: 'GET',
+          url: '/api/blocks?slug=',
+        })
 
         await ApiBlocks(req, res)
         expect(res.statusCode).toEqual(400)
@@ -27,7 +33,10 @@ describe('/api/blocks', () => {
 
     describe('valid slug', () => {
       test('returns 400', async () => {
-        const { req, res } = createMocks({ method: 'GET', url: `/api/blocks?slug=${slug}` });
+        const { req, res } = createMocks({
+          method: 'GET',
+          url: `/api/blocks?slug=${slug}`,
+        })
 
         await ApiBlocks(req, res)
         expect(res.statusCode).toEqual(200)

@@ -50,7 +50,7 @@ const RenderPosts = ({
       <div className={styles.mainContent}>
         <NoContents contents={posts} />
 
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
               <PostDate post={post} />
